@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport"
+		content="width=device-width,
+						initial-scale=1.0" />
+	<title>QR Code Generator</title>
+	
+	<style>
+		h1, h3 {
+		color: green;
+		}
+		body, header {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		}
+        #qrcode{
+            border: 2px solid black;
+            margin-top: 20px;
+            padding: 10px 10px 10px 10px;
+        }
+	</style>
+	<script src=
+"https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js">
+	</script>
+</head>
+
+<body>
+	<header>
+		<h1>Your generated Code is</h1> 
+		 
+
+        <form >
+
+        Enter name:<input type="text" id="name" required >
+        Age:<input type="number" id="age" required>
+		Aadhar: <input type="number" id="aadhar" required>
+		Mobile: <input type="number" id="mobile" required>
+        <input type="submit" onclick=" Abc(); return false" >
+
+
+
+        </form>
+	</header>
+	<main>
+		<div id="qrcode"></div>
+	</main>
+	
+	<script>
+        function Abc(){
+        var name=document.getElementById("name").value
+        var age=document.getElementById("age").value
+		var mobile=document.getElementById("mobile").value
+		var aadhar=document.getElementById("aadhar").value
+		var qrcode = new QRCode("qrcode",{
+            text:"Name:"+name+"<br> Age:"+age +" <br> Aadhar:"+aadhar  +"<br>  Mobile:"+mobile 
+    
+    
+        });
+        return false
+    }
+	</script>
+</body>
+
+</html>
